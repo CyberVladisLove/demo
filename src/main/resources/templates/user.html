@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+  <title>Добавление фильма</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="C:\Application\demo\demo\src\main\resources\templates\style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+  <script src="script.js"></script>
+
+
+</head>
+<body>
+
+<div th:insert="blocks/header"></div>
+
+<div class="container mt-5 mb-5" style="border-radius: 5px/5px; width: 45%; margin: 75px auto; background: #212529; box-shadow: 0 0 4px rgb(80, 80, 80);">
+  <br><h3 th:text="'Личный кабинет '+${user.login}" style="margin: 20px auto; width: max-content; color: white;"></h3>
+
+  <p th:text="'Логин: '+${user.login}" style="color: white; margin: 10px 20px;"/>
+  <p th:text="'Статус: '+${userStatus}" style="color: white; margin: 10px 20px;"/>
+  <p th:text="'Баланс: '+${user.balance}+' kinocoins'" style="color: white;margin: 10px 20px;"/>
+  <p th:text="'Фильмов всего: '+${countFilms}" style="color: white;margin: 10px 20px;"/>
+  <div class="row">
+    <form class="needs-validation" method="post" style="margin: 25px auto; width: max-content;" >
+      <button type="submit" class="btn btn-primary" style="margin: 20px auto; width: max-content;box-shadow: 0 0 3px rgb(70, 70, 70);transition: 0.25s ease;"onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">Пополнить баланс</button>
+    </form>
+    <form class="needs-validation" action="/relogin" method="post" style="margin: 25px auto; width: max-content;" >
+      <button type="submit" class="btn btn-primary" style="margin: 20px auto; width: max-content; background: hsla(17, 67%, 50%, 0.992); border: 2px hsla(17, 67%, 50%, 0.992);box-shadow: 0 0 3px rgb(70, 70, 70);transition: 0.25s ease;"onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">Выйти</button>
+    </form>
+  </div>
+
+</div>
+
+<div th:insert="blocks/footer"></div>
+
+</body>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <title>Библиотека фильмов</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="C:\Application\demo\demo\src\main\resources\templates\style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <script src="script.js"></script>
+
+
+</head>
+<body>
+
+<div th:insert="blocks/header"></div>
+
+<div class="container mt-7" style="margin-bottom: 75px">
+    <br><h1 style="margin: 0 auto; width: max-content;">Мои фильмы</h1>
+    <div class="row mt-4">
+        <div class="col">
+            <div th:each="film : ${films}" class="alert mt-2" style="background: none;box-shadow: 0 0 3px rgb(70, 70, 70); width: 80%; margin: 25px auto;">
+                <div class="row">
+                    <div class="col">
+                        <h3 th:text="${film.title}"/>
+                        <p/>Жанр: <b><span th:text="${film.genre}"/></b></p>
+                        <p th:text="${film.anons}"/>
+                        <a th:href="'/library/' + ${film.id}" class="btn" style="color:white; background: #212529;box-shadow: 0 0 3px rgb(70, 70, 70);transition: 0.25s ease;"onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">Обзор</a>
+                    </div>
+                    <div class="col-md-auto">
+                        <img class="" style=" border-radius: 5px/5px;box-shadow: 0 0 3px rgb(70, 70, 70);" th:src="${film.poster_url}" width="220" height="220"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+</body>
+

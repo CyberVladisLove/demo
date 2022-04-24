@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+  <title th:text="'Редактирование фильма '+${film.title}"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="C:\Application\demo\demo\src\main\resources\templates\style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+  <script src="script.js"></script>
+
+
+</head>
+<body>
+
+<div th:insert="blocks/header"></div>
+
+  <div th:each="film : ${film}" class="container mt-7 mb-5" style="border-radius: 5px/5px; width: 45%; margin: 75px auto; background: #212529; box-shadow: 0 0 4px rgb(80, 80, 80);">
+
+    <br><h3 th:text="'Редактирование фильма: '+${film.title}" style="margin: 20px auto; width: max-content; color: white;"/>
+
+    <form class="needs-validation" method="post" style="margin: 25px" >
+
+      <input type="text" th:value="${film.title}" name="title" placeholder="Название фильма" class="form-control" required><br>
+      <input type="text" th:value="${film.anons}" name="anons" placeholder="Анонс" class="form-control" required><br>
+      <input type="text" th:value="${film.producer}" name="producer" placeholder="Режиссёр" class="form-control" required><br>
+      <input type="text" th:value="${film.genre}" name="genre" placeholder="Жанр" class="form-control" required><br>
+      <textarea name="full_info" th:text="${film.full_info}" placeholder="Описание" class="form-control" required/><br>
+      <input type="text" th:value="${film.poster_url}" name="poster_url" placeholder="Ссылка на постер" class="form-control" required><br>
+      <input type="text" th:value="${film.video_url}" name="video_url" placeholder="Ссылка на исходный видеофайл" class="form-control" required>
+      <button type="submit" class="btn btn-primary" style="margin: 20px auto; width: max-content;">Обновить</button>
+
+    </form>
+
+  </div>
+
+
+<div th:insert="blocks/footer"></div>
+
+</body>
+

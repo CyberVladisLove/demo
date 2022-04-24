@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <title>Kinomania.ru</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <script src="script.js"></script>
+
+
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Добро пожаловать!</h1>
+                <p class="lead text-muted">Наш сервис представляет собой онлайн-кинотеатр. При регистрации мы дарим вам 5 kinocoin - виртуальная валюта нашего кинотеатра.
+                Вы можете добавлять фильмы в "Избранное". Для этого перейдите в "Фильмы", выберите фильм и нажмите кнопку "В избранное".
+                За каждый фильм у вас спишется 5 kinocoin. Вы можете пополнить свой баланс в личном кабинете.</p>
+                <p>
+                    <a href="/library" class="btn btn-primary my-2">Поехали!</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+<div th:insert="blocks/footer"></div>
+
+
+</body>
+

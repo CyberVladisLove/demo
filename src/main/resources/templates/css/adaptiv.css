@@ -1,0 +1,193 @@
+
+/*Для iPad и iPhone X*/
+
+@media (min-width: 768px) and (max-width:1024px){
+
+    .container{
+        max-width: 85%;
+    }
+    .nav ul a{
+        font-size: 22px;
+    }
+    .content-box h2{
+        font-size: 24px;
+    }
+    .content-box p{
+        font-size: 18px;
+    }
+    .sidebar ul{
+        font-size: 22px;
+    }
+    label{
+        font-size: 24px;
+    }
+    .group p{
+        font-size: 22px;
+    }
+    #checkbox{
+        width: 22px;
+    }
+    #radio{
+        width: 20px;
+    }
+    button{
+        margin: 30px;
+
+    }
+    .card{
+        width: 43.5%;
+    }
+    .photo,
+    .winsum{
+        width: 100%;
+        margin: 30px 30px;
+    }
+}
+
+@media (min-width: 350px) and (max-width:560px){
+    body{
+        background-image: url(img/back1.jpg);
+        padding: 0;
+        /*font-family: 'Exo 2', sans-serif;*/
+        font-family: 'Ruda', sans-serif;
+    }
+    .container{
+        max-width: 100%;
+        min-height: 825px;
+    }
+    .header{
+        display: flex;
+        height: 150px;
+    }
+    .title{
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .avatar{
+        display: inline-block;
+        width: 0%;
+        height: 100%;
+        border-radius: 2px/2px;
+        background: url(img/avatar.jpg) no-repeat center center / cover;
+    }
+    .nav li a{
+        font-size: 15px;
+        padding: 10px 5px;
+    }
+
+    .content-box{
+        display: inline;
+    }
+    .content{
+        width: 94%;
+        padding: 0 10px;
+    }
+    .content p{
+        line-height: 22px;
+    }
+    .sidebar{
+        padding: 10px 10px;
+        width: 100%;
+    }
+    .skills li{
+        font-size: 20px;
+        padding: 14px 0;
+        transition: transform 0.4s ease;
+    }
+    .content-box h2{
+        font-size: 20px;
+    }
+    .content-box p{
+
+        font-size: 19px;
+    }
+    .photo,
+    .winsum{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .content-box-g img{
+        width: 100%;
+        border-radius: 7px/7px;
+        box-shadow: 0px 0px 16px rgb(58, 58, 58);
+
+    }
+    .back{
+        width: 100%;
+    }
+
+    label{
+        font-size: 25px;
+        margin: 25px 0px;
+    }
+    .group p{
+        width: 100%;
+        font-size: 25px;
+        margin: 12px 0;
+    }
+    .service-q{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    #checkbox{
+        width: 25px;
+    }
+    #radio{
+        width: 25px;
+    }
+    button{
+        margin: 30px;
+
+    }
+    .card{
+        width: 100%;
+    }
+    #list h1{
+
+        margin: 5px 0;
+        background: rgb(238, 237, 237);
+        border-radius: 5px/5px;
+    }
+    .photo,
+    .winsum{
+        width: 100%;
+        margin: 30px 30px;
+    }
+    .content-box-g img{
+        width: 100%;
+        border-radius: 7px/7px;
+        box-shadow: 0px 0px 16px rgb(58, 58, 58);
+
+    }
+
+    .content-box video{
+        margin-bottom: 20px;
+        width: 100%;
+        box-shadow: 0px 0px 16px rgb(58, 58, 58);
+    }
+    .nav ul{
+        display: inline-block;
+        background: rgb(238, 237, 237);
+
+        width: 100%;
+    }
+    .nav li a{
+        display: flex;
+        padding: 15px 10px;
+        text-decoration: none;
+        color:  #444444;
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px solid #cfcfcf;
+        transition: background 0.5s ease;
+    }
+
+}
+
+
+
+

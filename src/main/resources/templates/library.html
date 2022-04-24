@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <title>Библиотека фильмов</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="C:\Application\demo\demo\src\main\resources\templates\style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <script src="script.js"></script>
+
+
+</head>
+<body>
+
+    <div th:insert="blocks/header"></div>
+
+    <div class="container mt-7 mb-7">
+        <div class="row">
+            <div class="col-md">
+                <br><h1 style="width: max-content;">Библиотека фильмов</h1>
+            </div>
+            <div class="col-md-auto">
+                <form action="library/filter" method="post" style="margin: 10px 0">
+                    <label for="genreFilter">Жанр: </label>
+                    <select name="genreFilter" id="genreFilter" style="margin: 0 10px 0 0"></select>
+                    <button type="submit" class="btn btn-primary" style="margin: 20px auto; width: max-content;">Найти</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="row mt-4">
+            <div class="col">
+                <div th:each="film : ${films0}" class="alert mt-2" style="background: none;box-shadow: 0 0 3px rgb(70, 70, 70); width: 100%; margin: 30px auto;">
+                    <div class="row">
+                        <div class="col">
+                            <h3 th:text="${film.title}"/>
+                            <p th:text="${film.anons}"/>
+                            <a th:href="'/library/' + ${film.id}" class="btn" style="color:white; background: #212529;box-shadow: 0 0 3px rgb(70, 70, 70);transition: 0.25s ease;"onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">Обзор</a>
+                        </div>
+                        <div class="col-md-auto">
+                            <img class="" style=" border-radius: 5px/5px;box-shadow: 0 0 3px rgb(70, 70, 70);" th:src="${film.poster_url}" width="220" height="220"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col ">
+                <div th:each="film : ${films1}" class="alert mt-2" style="background: none;box-shadow: 0 0 3px rgb(70, 70, 70); width: 100%; margin: 30px auto;">
+                    <div class="row">
+                        <div class="col">
+                            <h3 th:text="${film.title}"/>
+                            <p th:text="${film.anons}"/>
+                            <a th:href="'/library/' + ${film.id}" class="btn" style="color:white; background: #212529;box-shadow: 0 0 3px rgb(70, 70, 70);transition: 0.25s ease;"onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">Обзор</a>
+                        </div>
+                        <div class="col-md-auto">
+                            <img class="" style=" border-radius: 5px/5px;box-shadow: 0 0 3px rgb(70, 70, 70);" th:src="${film.poster_url}" width="220" height="220"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    /*<![CDATA[*/
+    var genres = /*[[${genres}]]*/ 'default';
+
+    var filter = document.getElementById('genreFilter');
+    for(let i = 0; i < genres.length; i++){
+        filter.options[filter.options.length] = new Option("genres[i]", "genres[i]");
+    }
+
+
+
+    /*]]>*/
+
+</body>
+

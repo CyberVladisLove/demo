@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+  <title th:text="${film.title}"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="C:\Application\demo\demo\src\main\resources\templates\style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+  <script src="script.js"></script>
+
+
+</head>
+<body th:each="film : ${film}" style="background-color: black; width: 100%; height: 120%;">
+
+  <div th:insert="blocks/header" style="margin: 0;padding: 0;position: relative; z-index:2;"></div>
+
+  <div class="bigContainer" style="width: 100%; height: 100%; margin: 25px 0; padding: 0;">
+
+    <div style="filter: brightness(.7); width: 100%; height: 100%; position: absolute; z-index: 1;">
+      <div class="back" th:style="'background:url(' + ${film.poster_url} + ')no-repeat center center; background-size: 110%;
+            width: 100%; height: 120%; position: absolute; z-index: 1;filter: blur(12px);'">
+      </div>
+    </div>
+
+    <div class="front" style="position: relative; z-index:2; margin: 0 auto;">
+
+      <div class="container" style="padding-top: 75px">
+
+      <div class="mt-2" style=" border-radius: 5px/5px; background-color: none; box-shadow: 0 0 6px rgb(70, 70, 70);">
+        <div class="row">
+          <div class="col m-4">
+
+            <div class="row">
+              <div class="col-md-auto">
+                <img class="" style="border-radius: 5px/5px;box-shadow: 0 0 3px rgb(70, 70, 70); margin-bottom: 15px;" th:src="${film.poster_url}" width="210" height="210"/>
+                <p class="mt-2" style="color: white;"><b >Просмотры:</b> <span th:text="${film.views}"/></p>
+                <a id="editButton" th:href="'/library/' + ${film.id} + '/edit'" class="btn btn-warning m-1" style="visibility: hidden; box-shadow: 0 0 3px rgb(70, 70, 70);transition: 0.25s ease;"onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">Редактировать</a>
+                <form th:action="'/library/' + ${film.id} + '/delete'" method="post">
+                  <button id="deleteButton" type="submit" class="btn btn-warning m-1" style="visibility: hidden; box-shadow: 0 0 3px rgb(70, 70, 70); transition: 0.25s ease;"onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">Удалить</button>
+                </form>
+                <form th:action="'/library/' + ${film.id} + '/toMyFilms'" method="post">
+                  <button th:text="${message}" id="addToMyFilms" type="submit" class="btn btn-warning m-1" style=" box-shadow: 0 0 3px rgb(70, 70, 70);transition: 0.25s ease;"onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">В избранное</button>
+                </form>
+              </div>
+
+              <div class="col" >
+                <h2 th:text="${film.title}" style="color: white;"/>
+                <p style="color: white;">Режиссёр: <b><span th:text="${film.producer}"/></b></p>
+                <p style="color: white;">Жанр: <b><span th:text="${film.genre}"/></b></p>
+                <p class="text-justify" th:text="${film.full_info} "style="color: white;"/>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div class="col-md-auto">
+            <div class="embed-responsive embed-responsive-16by9 m-4">
+              <iframe th:src="${film.video_url}" style=" border-radius: 5px/5px;box-shadow: 0 0 3px rgb(70, 70, 70);" class="embed-responsive-item" allowfullscreen frameborder="0" width="608" height="342"></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+<script th:inline="javascript">
+
+      /*<![CDATA[*/
+        var userStatus = /*[[${user.status}]]*/ 'default';
+        var isMyFilm = /*[[${isMyFilm}]]*/ 'default';
+        var editButton = document.getElementById('editButton');
+        var deleteButton = document.getElementById('deleteButton');
+        var addButton = document.getElementById('addToMyFilms');
+        if(userStatus == 0){
+            editButton.style.visibility = "hidden";
+            deleteButton.style.visibility = "hidden";
+        }
+        else{
+            editButton.style.visibility = "visible";
+            deleteButton.style.visibility = "visible";
+        }
+        if(isMyFilm){
+         addButton.style.background = "green";
+         addButton.style.border = "2px green";
+         addButton.style.background = "green";
+         addButton.disabled = 'true';
+         }
+
+       /*]]>*/
+
+</script>
+
+
+
+
+
+</body>

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+html, body, div, span, applet, object, iframe,
+blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body{
+    background-image: url(imgService/back1.jpg);
+    padding: 200px 0;
+    /*font-family: 'Exo 2', sans-serif;*/
+    font-family: 'Ruda', sans-serif;
+    background: rgb(0, 0, 0);
+}
+
+.container{
+    background: rgb(255, 255, 255);
+    max-width: 1100px;
+    min-height: 700px;
+    border: 10px solid rgb(255, 255, 255);
+    margin: 0 auto;
+    box-shadow: 2px 2px 4px rgb(80, 80, 80);
+    padding: 0 auto;
+    border-radius: 2px/2px;
+}
+
+.header{
+    display: flex;
+    height: 220px;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+    font-size: 34px;
+    background: url(imgService/FilmTitle.jpg) no-repeat center center / cover;
+    color: #ffffff;
+    margin-right: 10px;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 2px/2px;
+}
+
+.avatar{
+    display: flex;
+    width: 25%;
+    height: 100%;
+    border-radius: 2px/2px;
+    background: url(imgService/avatar.jpg) no-repeat center center / cover;
+}
+
+.nav ul{
+    display: flex;
+    background: rgb(238, 237, 237);
+    margin: 10px 0;
+}
+
+.nav li a{
+    display: flex;
+    padding: 20px;
+    text-decoration: none;
+    color:  #444444;
+    font-size: 18px;
+    font-weight: bold;
+    border-right: 1px solid #cfcfcf;
+    transition: background 0.5s ease;
+}
+
+.nav li a:hover{
+    background: rgb(214, 214, 214);
+}
+
+form{
+    width: 100%;
+    border-radius: 7px/7px;
+    box-shadow: 2px 2px solid rgb(100, 100, 100);
+    background: rgb(238, 237, 237);
+}
+.group{
+    margin: 4px;
+    padding: 10px 10px;
+}
+.group p{
+    width: 50%;
+    padding: 5px 5px;
+    font-size: 18px;
+}
+label{
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+input{
+    margin-top: 5px;
+    height: 22px;
+    max-width: 250px;
+    border-radius: 10px/10px;
+    border: 2px rgb(rgb(0, 0, 0), rgb(194, 194, 194), blue) ;
+    font-size: 23px;
+}
+button{
+    cursor: pointer;
+    padding: 10px 25px;
+    height: 50px;
+    color:  #000000;
+    border-radius: 6px/6px;
+    background: hsla(194, 100%, 32%, 0.992);
+    border: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 85);
+    margin: 10px 10px 20px 10px;
+    transition: 0.2s ease;
+}
+button:focus{
+    transform: scale(0.95);
+}
+button:hover{
+    color: rgb(216, 216, 216);
+}
+
+.card{
+
+    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px rgb(71, 71, 71);
+    width: 29.5%;
+    text-align: center;
+
+}
+.card img{
+
+    width: 100%;
+    border: 1px solid black;
+
+}
+
+#list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+}
+#list h1{
+
+    padding: 7px;
+    background: rgb(238, 237, 237);
+    border-radius: 5px/5px;
+}
+h1{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+ol, ul {
+	list-style: none;
+}
+

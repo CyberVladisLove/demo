@@ -1,0 +1,36 @@
+<div th.fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/home" class="nav-link px-2 text-white" style="color: white;text-decoration: none; transition: 0.4s ease;" onmouseover="this.style.transform='scale(1.15)';" onmouseout="this.style.transform='scale(1)';">Главная</a></li>
+                <li><a href="/library" class="nav-link px-2 text-white" style="color: white;text-decoration: none; transition: 0.4s ease;" onmouseover="this.style.transform='scale(1.15)';" onmouseout="this.style.transform='scale(1)';">Фильмы</a></li>
+                <li><a href="/myFilms" class="nav-link px-2 text-white" style="color: white;text-decoration: none; transition: 0.4s ease;" onmouseover="this.style.transform='scale(1.15)';" onmouseout="this.style.transform='scale(1)';">Избранное</a></li>
+                <li><a id="addButton" href="/library/add" class="nav-link px-2 text-white" style="color: white;text-decoration: none; transition: 0.4s ease;" onmouseover="this.style.transform='scale(1.15)';" onmouseout="this.style.transform='scale(1)';">Добавить новый фильм</a></li>
+
+            </ul>
+            <a href="/user" th:text="'Пользователь: '+${user.login}" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" style="color: white;text-decoration: none; transition: 0.25s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';"></a>
+            <p th:text="'Баланс: '+${user.balance}+' coins'" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" style="margin-left: 40px;"/>
+        </div>
+    </div>
+
+
+    <script th:inline="javascript">
+
+      /*<![CDATA[*/
+        var userStatus = /*[[${user.status}]]*/ 'default';
+        var button = document.getElementById('addButton');
+        if(userStatus == 0){
+            button.style.visibility = "hidden";
+        }
+        else{
+            button.style.visibility = "visible";
+        }
+       /*]]>*/
+
+    </script>
+</div></div>
